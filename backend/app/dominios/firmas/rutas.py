@@ -1,5 +1,7 @@
 import hashlib
-from fastapi import APIRouter, BackgroundTasks
+from fastapi import APIRouter, BackgroundTasks, HTTPException
+from bson import ObjectId
+from app.core.db import db_context
 from app.dominios.firmas.modelos import FirmaRequest, FirmaResponse
 from app.dominios.firmas.proxy import ProxyValidacionLegal
 from app.dominios.cierre_legal.fachada import OrquestadorCierreFacade
@@ -22,6 +24,18 @@ async def firmar_iniciativa(
         request: FirmaRequest,
         tareas_fondo: BackgroundTasks
 ):
+    # Validar que la propuesta exista
+    try:
+        propuesta = await db_context.db.propuestas.find_one({"_id": ObjectId(propuesta_id)})
+    except:
+        raise HTTPException(status_code=400, detail="ID de propuesta inválido")
+    
+    if not propuesta:
+        raise HTTPException(status_code=404, detail="Propuesta no encontrada")
+    
+    if propuesta.get("estado") != "ACTIVA":
+        raise HTTPException(status_code=400, detail="La propuesta no está activa")
+
     # 1. Hashear el DNI inmediatamente en la capa de entrada
     dni_hash = hashlib.sha256(request.dni_ciudadano.encode('utf-8')).hexdigest()
 

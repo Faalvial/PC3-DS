@@ -4,6 +4,7 @@ from app.core.db import conectar_bd, cerrar_bd
 from app.core.config import settings
 from app.dominios.propuestas.rutas import router as router_propuestas
 from app.dominios.firmas.rutas import router as router_firmas
+from app.dominios.usuarios.rutas import router as router_usuarios
 
 app = FastAPI(
     title="Voz del Ciudadano API",
@@ -30,4 +31,5 @@ async def shutdown_db_client():
 
 # Registro de Rutas
 app.include_router(router_propuestas, prefix="/api/v1/propuestas")
-app.include_router(router_firmas, prefix="/api/v1/propuestas")
+app.include_router(router_firmas, prefix="/api/v1/firmas")
+app.include_router(router_usuarios, prefix="/api/v1/usuarios")

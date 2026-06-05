@@ -1,21 +1,21 @@
-# 🏛️ Plataforma "Voz del Ciudadano"
+# Plataforma "Voz del Ciudadano"
 
-## 📋 Descripción del Proyecto
+## Descripción del Proyecto
 
 **Voz del Ciudadano** es una plataforma digital que permite a los ciudadanos proponer iniciativas legislativas y reunir firmas digitales para validarlas constitucionalmente.
 
 ### Características Principales
-✅ Autenticación segura con DNI y contraseña (bcrypt)  
-✅ Crear y gestionar propuestas legislativas  
-✅ Firmar digitalmente propuestas con validación de 90 días  
-✅ Cierre automático al alcanzar 25,000 firmas  
-✅ Generación criptográfica de sello SHA-256  
-✅ Interfaz React intuitiva (5 pantallas)  
-✅ Backend con arquitectura limpia (4 patrones de diseño)  
+Autenticación segura con DNI y contraseña (bcrypt)  
+Crear y gestionar propuestas legislativas  
+Firmar digitalmente propuestas con validación de 90 días  
+Cierre automático al alcanzar 25,000 firmas  
+Generación criptográfica de sello SHA-256  
+Interfaz React intuitiva (5 pantallas)  
+Backend con arquitectura limpia (4 patrones de diseño)  
 
 ---
 
-## 🛠️ Requisitos Previos
+## Requisitos Previos
 
 ### Para el Backend (Python)
 - **Python** ≥ 3.8
@@ -32,9 +32,9 @@
 
 ---
 
-## 📦 Instalación
+## Instalación
 
-### 1️⃣ Clonar o Descargar el Proyecto
+### 1. Clonar o Descargar el Proyecto
 
 ```bash
 # Si está en GitHub
@@ -45,7 +45,7 @@ cd PC3final
 cd c:\Users\USER\Desktop\PC3final
 ```
 
-### 2️⃣ Configurar Backend (Python)
+### 2. Configurar Backend (Python)
 
 #### Paso A: Instalar Dependencias
 
@@ -97,11 +97,11 @@ INFO:     Application startup complete
 Conexión exitosa a MongoDB Atlas.
 ```
 
-✅ Backend listo en: **http://localhost:5001**
+Backend listo en: **http://localhost:5001**
 
 ---
 
-### 3️⃣ Configurar Frontend (React)
+### 3. Configurar Frontend (React)
 
 #### Paso A: Instalar Dependencias
 
@@ -131,11 +131,11 @@ You can now view frontend in the browser.
 Note that the development build is not optimized.
 ```
 
-✅ Frontend listo en: **http://localhost:3000**
+Frontend listo en: **http://localhost:3000**
 
 ---
 
-## 🚀 Ejecución Completa (Opción Rápida)
+## Ejecución Completa (Opción Rápida)
 
 Si tienes ambos entornos configurados:
 
@@ -155,13 +155,13 @@ npm start
 **Resultado:**
 - Backend corriendo en: **http://localhost:5001**
 - Frontend corriendo en: **http://localhost:3000**
-- CORS habilitado para comunicación entre ellos ✅
+- CORS habilitado para comunicación entre ellos
 
 ---
 
-## 📱 Flujo de Uso
+## Flujo de Uso
 
-### Pantalla 1️⃣: Login
+### Pantalla 1: Login
 ```
 ┌──────────────────────┐
 │ Iniciar Sesión       │
@@ -177,7 +177,7 @@ npm start
 - Ingresa tu DNI (8 dígitos) y contraseña
 - Si no tienes cuenta, haz clic en "Regístrate aquí"
 
-### Pantalla 2️⃣: Registro
+### Pantalla 2: Registro
 ```
 ┌──────────────────────┐
 │ Crear Nueva Cuenta   │
@@ -191,10 +191,10 @@ npm start
 - La contraseña se encripta automáticamente
 - Serás redirigido al login después de registrarte
 
-### Pantalla 3️⃣: Dashboard
+### Pantalla 3: Dashboard
 ```
 ┌──────────────────────────────────┐
-│ 📊 Dashboard                     │
+│ Dashboard                        │
 │ Propuestas Activas               │
 │                                  │
 │ [Crear Nueva Propuesta]          │
@@ -208,10 +208,10 @@ npm start
 - Lista todas las propuestas activas
 - Ordenadas por cantidad de firmas (mayor a menor)
 
-### Pantalla 4️⃣: Crear Propuesta
+### Pantalla 4: Crear Propuesta
 ```
 ┌──────────────────────────────────┐
-│ ✏️ Nueva Iniciativa Legislativa   │
+│ Nueva Iniciativa Legislativa     │
 │                                  │
 │ Título: [_______________]        │
 │                                  │
@@ -227,17 +227,17 @@ npm start
 - Mínimo 50 caracteres en el texto
 - Se crea con 0 firmas y estado "ACTIVA"
 
-### Pantalla 5️⃣: Detalles de Propuesta
+### Pantalla 5: Detalles de Propuesta
 ```
 ┌──────────────────────────────────┐
 │ Propuesta: "Reforma Tributaria"  │
-│ Estado: 🟢 ACTIVA                │
+│ Estado: ACTIVA                   │
 │ Firmas: 15,234 / 25,000 (60%)   │
 │                                  │
 │ Contenido: "Art. 1..."           │
 │ Plazo restante: 42 días          │
 │                                  │
-│ [🖊️ Firmar Digitalmente]          │
+│ [Firmar Digitalmente]            │
 │ [Volver]                         │
 └──────────────────────────────────┘
 ```
@@ -247,7 +247,7 @@ npm start
 
 ---
 
-## 🔌 Endpoints API
+## Endpoints API
 
 ### Autenticación
 
@@ -285,7 +285,7 @@ Response: { "mensaje": "Firma registrada...", "total_firmas_actuales": 1500 }
 
 ---
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 PC3final/
@@ -334,39 +334,39 @@ PC3final/
 
 ---
 
-## 🔐 Seguridad
+## Seguridad
 
-✅ **Contraseñas:** Encriptadas con bcrypt (factor ≥ 10)  
-✅ **DNI:** Hasheado en SHA-256 para tabla de firmas  
-✅ **CORS:** Configurado para aceitar solo localhost:3000  
-✅ **Sesiones:** Token en localStorage del navegador  
-✅ **Validaciones:** Plazo de 90 días, unicidad de firmas, estado de propuestas  
+**Contraseñas:** Encriptadas con bcrypt (factor >= 10)  
+**DNI:** Hasheado en SHA-256 para tabla de firmas  
+**CORS:** Configurado para aceitar solo localhost:3000  
+**Sesiones:** Token en localStorage del navegador  
+**Validaciones:** Plazo de 90 días, unicidad de firmas, estado de propuestas  
 
 ---
 
-## 🚨 Troubleshooting
+## Troubleshooting
 
-### ❌ Error: "ModuleNotFoundError: No module named 'fastapi'"
+### Error: "ModuleNotFoundError: No module named 'fastapi'"
 **Solución:** Asegúrate de activar el entorno virtual y ejecutar `pip install -r requirements.txt`
 
-### ❌ Error: "Conexión rechazada a MongoDB"
+### Error: "Conexión rechazada a MongoDB"
 **Solución:** Verifica que:
 - Tu `MONGO_URI` en `.env` sea correcto
 - Tu IP esté permitida en MongoDB Atlas (Security → Network Access → Add Current IP)
 - Tengas conexión a internet
 
-### ❌ Frontend muestra CORS error
+### Frontend muestra CORS error
 **Solución:** Verifica que en `backend/.env` tengas `CLIENT_URL=http://localhost:3000` correcto
 
-### ❌ Puerto 5001 ya está en uso
+### Puerto 5001 ya está en uso
 **Solución:** Usa otro puerto: `uvicorn app.main:app --port 5002`
 
-### ❌ Puerto 3000 ya está en uso
+### Puerto 3000 ya está en uso
 **Solución:** Configura otro puerto en frontend: `PORT=3001 npm start`
 
 ---
 
-## 📚 Documentación Adicional
+## Documentación Adicional
 
 - **Especificación de Requisitos:** Ver [SRS.md](SRS.md)
 - **Patrones de Diseño:** 4 patrones implementados (Composite, Proxy, Decorator, Facade)
@@ -375,13 +375,13 @@ PC3final/
 
 ---
 
-## 📝 Licencia
+## Licencia
 
 Proyecto educativo. Uso libre.
 
 ---
 
-## ✅ Checklist de Verificación
+## Checklist de Verificación
 
 Antes de reportar problemas, verifica:
 
@@ -397,6 +397,6 @@ Antes de reportar problemas, verifica:
 
 ---
 
-**¡La plataforma está lista para ejecutarse!** 🎉
+**¡La plataforma está lista para ejecutarse!**
 
 Para dudas o problemas, revisa el [SRS.md](SRS.md) para detalles técnicos completos.

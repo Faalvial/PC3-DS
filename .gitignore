@@ -1,0 +1,18 @@
+# Entornos virtuales
+.venv/
+
+# IDEs
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Node
+node_modules/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
